@@ -1,0 +1,14 @@
+<button class="btn btn-success">success</button>
+
+<p>
+  <span>{{vn}}</span>
+  <span>{{en}}</span>
+</p>
+<hr>
+<img [src]='imageUrl'>
+<button class="btn btn-success" (click)="changeImg()">Change img</button>
+<hr>
+<input [(ngModel)]="textMessage" #mana>
+<h3 [style.color]="textMessage.length %2 == 0 ? 'red' : 'black'" >{{mana.value | json}}</h3>
+<div [class]="'circle'"></div>
+<hr>

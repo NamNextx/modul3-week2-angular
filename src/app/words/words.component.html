@@ -1,0 +1,35 @@
+<h1 style="text-align: center; color: red">Word component example</h1>
+
+<div *ngIf="isShowForm">
+  <div>
+    <label>
+      add English
+      <input [(ngModel)]="newEn">
+    </label>
+  </div>
+
+  <div>
+    <label>
+      add Vietnamese
+      <input [(ngModel)]="newVn">
+    </label>
+  </div>
+  <button (click)="addWord($event)">Create new Word</button>
+</div>
+<button (click)="isShowForm = true" *ngIf="!isShowForm"> Show form</button>
+<select [(ngModel)] = "filterStatus">
+  <option value="SEE-ALL">See-more</option>
+  <option value="SEE-FOR-GET">For get</option>
+  <option value="SEE-REMEMBER">Remember</option>
+</select>
+<div *ngFor="let word of arrWords" class="word">
+  <div *ngIf="isCheckOption(word.memorized)">
+    <h3 [ngStyle] = "{color: word.memorized ? 'green': 'red'}"> {{word.en}} </h3>
+    <p>{{word.vn}}</p>
+    <button (click)="isDelete(word.id)">Delete</button>
+    <button (click)="word.memorized = !word.memorized">
+      {{word.memorized ? 'For-get' : 'Remember'}}</button>
+  </div>
+
+</div>
+

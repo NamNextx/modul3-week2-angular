@@ -1,0 +1,4 @@
+<ng-container *ngFor="let person of arrPerson">
+  <app-person (myClick)="deletePerson($event)"  [name]="person.name" [age]="person.age"  ></app-person>
+</ng-container>
+
