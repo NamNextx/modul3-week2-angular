@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 })
 
 @Injectable()
-export class WeatherServiceApi implements OnInit {
+export class WeatherServiceApiComponent implements OnInit {
   constructor(private weatherService: HttpClient) {}
 
   getWeather(cityName: string): Promise<City> {

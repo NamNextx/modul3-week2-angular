@@ -21,7 +21,7 @@ import { CardFormComponent } from './card-form/card-form.component';
 import { LeanPipesComponent } from './lean-pipes/lean-pipes.component';
 import { ServiceOneComponent } from './service-one/service-one.component';
 import { ServiceUseComponent } from './service-use/service-use.component';
-import { WeatherServiceApi } from './weather-service-api/weather-service-api';
+import { WeatherServiceApiComponent } from './weather-service-api/weather-service-api.component';
 
 
 
@@ -42,7 +42,7 @@ import { WeatherServiceApi } from './weather-service-api/weather-service-api';
     LeanPipesComponent,
     ServiceOneComponent,
     ServiceUseComponent,
-    WeatherServiceApi,
+    WeatherServiceApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +51,7 @@ import { WeatherServiceApi } from './weather-service-api/weather-service-api';
     HttpClientModule
   ],
   providers: [ ServiceOneComponent,
-    WeatherServiceApi
+    WeatherServiceApiComponent
   ],
   bootstrap: [AppComponent]
 })

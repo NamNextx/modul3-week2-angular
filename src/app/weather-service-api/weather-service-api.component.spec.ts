@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeatherServiceApi } from './weather-service-api';
+import { WeatherServiceApiComponent } from './weather-service-api.component';
 
-describe('WeatherServiceApi', () => {
-  let component: WeatherServiceApi;
-  let fixture: ComponentFixture<WeatherServiceApi>;
+describe('WeatherServiceApiComponent', () => {
+  let component: WeatherServiceApiComponent;
+  let fixture: ComponentFixture<WeatherServiceApiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeatherServiceApi ]
+      declarations: [ WeatherServiceApiComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherServiceApi);
+    fixture = TestBed.createComponent(WeatherServiceApiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

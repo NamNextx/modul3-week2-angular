@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ServiceOneComponent} from '../service-one/service-one.component';
-import {WeatherServiceApi} from '../weather-service-api/weather-service-api';
+import {WeatherServiceApiComponent} from '../weather-service-api/weather-service-api.component';
+import {City} from '../models/City';
 
 @Component({
   selector: 'app-service-use',
@@ -9,18 +10,22 @@ import {WeatherServiceApi} from '../weather-service-api/weather-service-api';
   providers: []
 })
 export class ServiceUseComponent implements OnInit {
-  myData;
 
-  constructor(private weatherService: WeatherServiceApi) {
+  constructor(private weatherService: WeatherServiceApiComponent, private getIpService: ServiceOneComponent) {
 
   }
 
+  myData: City;
+
   ngOnInit() {
-    this.weatherService.getWeather('SaiGon').then( city => {
-      console.log(city.main.temp);
+
+    this.getIpService.getIp().then(ip => {
+      console.log(ip);
     });
-    // this.myData = this.serviceComponent.getIp().subscribe(res => this.myData = res);
-    // this.myData = JSON.stringify(this.myData);
+
+    this.weatherService.getWeather('SaiGon').then(city => {
+      this.myData = city;
+    });
   }
 
 }

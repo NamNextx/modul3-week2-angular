@@ -10,13 +10,13 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 
 export class ServiceOneComponent implements OnInit {
-  dataUrl = 'http://www.mocky.io/v2/5cee0cf43000000f386e9858';
+  dataUrl = 'http://ip-api.com/json/24.48.0.1';
 
   constructor(private http: HttpClient) {
   }
 
   getIp() {
-    return this.http.get(this.dataUrl);
+    return this.http.get(this.dataUrl).toPromise();
   }
 
   ngOnInit() {
